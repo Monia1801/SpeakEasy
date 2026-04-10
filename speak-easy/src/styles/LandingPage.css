@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: #F9FAFB;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.nav-left-side {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.audio-logo {
+  height: 32px;
+  width: 32px;
+  padding: 6px;
+  background-color:#10B981;
+  color: white;
+  border-radius: 50%;
+}
+
+.nav-left-side h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.mid {
+  display: flex;
+  gap: 2rem;
+}
+
+.mid a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.mid a:hover {
+  color: #000;
+}
+
+.right-side button {
+  padding: 10px 18px;
+  background: #10B981;
+  color: #F9FAFB;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ================= HOME ================= */
+
+#home {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6vw;
+  max-width: 1800px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+.home-left-side {
+  flex: 1;
+  max-width: 550px;
+}
+
+.home-left-side h1 {
+  font-size: 2.8rem;
+  font-weight: 900;
+  letter-spacing: 0.3px;
+}
+
+.home-left-side p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  width: 80%;
+}
+
+.buttons button {
+  flex: 1;
+  padding: 12px 0;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buttons button:first-child {
+  background: #10B981;
+  color: #F9FAFB;
+}
+
+.buttons button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+}
+
+.buttons button:last-child {
+  background: #F9FAFB;
+  border: 1px solid #10B981;
+  color: #10B981;
+}
+
+.buttons button:last-child:hover {
+  background: #be7ee6;
+  color: #F9FAFB;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(16, 185, 129, 0.3);
+  border:none;
+}
+
+#home svg {
+  height: 140px;
+  width: 140px;
+  color: #10B981;
+}
+
+#features {
+  padding: 80px 6vw;
+  text-align: center;
+}
+
+#features .heading {
+  margin-bottom: 40px;
+}
+
+#features .heading h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+#features .heading p {
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.card {
+  position: relative;
+  background-color: white;
+  padding: 24px;
+  border-radius: 20px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  height: 22vh;
+  border: 1px solid rgb(219, 218, 218);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  color: #000;
+}
+
+.card p,
+.card h4 {
+  color: #374151;
+  line-height: 1.5;
+}
+
+#future-updates {
+  padding: 80px 6vw;
+  text-align: center;
+}
+
+#future-updates .card::after {
+  content: "Coming Soon";
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: #ffc144;
+  color: white;
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.conclusion {
+  padding: 80px 6vw;
+  display: flex;
+  justify-content: center;
+}
+
+.conc-card {
+  background: #10B981;
+  color: #F9FAFB;
+  padding: 40px;
+  border-radius: 18px;
+  text-align: center;
+  width: 100%;
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+}
+
+.conc-card h2 {
+  font-size: 36px;
+}
+
+.conc-card p {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.conc-card button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  background: #F9FAFB;
+  color: #10B981;
+  font-weight: 600;
+  cursor: pointer;
+  width: 11vw;
+  height: 6vh;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #6b7280;
+  margin-bottom: 15px;
+  border-top: 1px solid rgb(232, 232, 232);
+}
