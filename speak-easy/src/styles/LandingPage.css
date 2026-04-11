@@ -49,7 +49,7 @@ nav {
 
 .mid a {
   text-decoration: none;
-  color: #374151;
+  color: #5f6671;
   font-weight: 500;
   transition: 0.3s;
 }
@@ -139,7 +139,8 @@ nav {
 }
 
 .buttons button:last-child:hover {
-  background: #f3f4f6;
+  background: #5f65ae;
+  color:white;
   transform: translateY(-3px);
 }
 
