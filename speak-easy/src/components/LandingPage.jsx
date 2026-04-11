@@ -16,8 +16,7 @@ const LandingPage = () => {
           <div className="mid">
             <a href="#home">Home</a>
             <a href="#features">Features</a>
-            <a href="#">Practice</a>
-            <a href="#">About</a>
+            <a href="#">Future</a>
           </div>
 
           <div className="right-side">
@@ -26,20 +25,51 @@ const LandingPage = () => {
         </nav>
       </header>
 
-
       <section id="home">
         <div className="home-left-side">
-          <h1>Master English for Interviews & Visa Success</h1>
-          <p>Practice speaking with AI and gain confidence faster. Get real time feedback on your pronunciation, fluency, and confidence. </p>
+          <h1>
+            Master English for <br />
+            <span className="green">Interviews</span> &{" "}
+            <span className="orange">Visa</span> <br />
+            <span className="orange">Success</span>
+          </h1>
+
+          <p>
+            Practice speaking with AI and gain confidence faster. Get real time
+            feedback on your pronunciation, fluency, and confidence.
+          </p>
+
           <div className="buttons">
             <button>Start Practicing</button>
             <button>Watch Demo</button>
           </div>
         </div>
 
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="home-audio-logo">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" /></svg>
+        <div className="audio-visual">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round"
+              d="M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75m-3.75 0h7.5M12 15.75a3 3 0 0 1-3-3V4.5a3 3 0 1 1 6 0v8.25a3 3 0 0 1-3 3Z" />
+          </svg>
 
+          <div className="audio-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
       </section>
 
 
