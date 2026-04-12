@@ -16,7 +16,7 @@ const LandingPage = () => {
           <div className="mid">
             <a href="#home">Home</a>
             <a href="#features">Features</a>
-            <a href="#">Future</a>
+            <a href="#future-updates">Future</a>
           </div>
 
           <div className="right-side">
