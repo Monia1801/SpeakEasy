@@ -1,7 +1,9 @@
 import React from 'react'
+import {useNavigate} from "react-router-dom";
 import "../styles/LandingPage.css";
 
 const LandingPage = () => {
+  const navigate = useNavigate();
   return (
     <div>
 
@@ -20,7 +22,7 @@ const LandingPage = () => {
           </div>
 
           <div className="right-side">
-            <button> Get Started</button>
+            <button onClick={()=>navigate("/login")}> Get Started</button>
           </div>
         </nav>
       </header>
