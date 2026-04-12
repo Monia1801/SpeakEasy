@@ -6,10 +6,12 @@
 }
 
 header {
-  position: sticky;
+  position: fixed;
   top: 0;
+  width: 100%;
   background: #F9FAFB;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
 }
 
 nav {
@@ -73,7 +75,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 6vw;
+  padding: 10vh 6vw 0 6vw;
   max-width: 1400px;
   margin: 0 auto;
   gap: 60px;
