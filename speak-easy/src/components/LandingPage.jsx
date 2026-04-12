@@ -42,8 +42,8 @@ const LandingPage = () => {
           </p>
 
           <div className="buttons">
-            <button>Start Practicing</button>
-            <button>Watch Demo</button>
+            <button onClick={()=>navigate("/login")}>Start Practicing</button>
+            <button onClick={()=>navigate("/login")}>Watch Demo</button>
           </div>
         </div>
 
@@ -139,7 +139,7 @@ const LandingPage = () => {
         <div className="conc-card">
           <h2>Start your speaking journey today </h2>
           <p>Join thousands of learners improving their English speaking <br></br> skills every day.</p>
-          <button>Get Started</button>
+          <button onClick={()=>navigate("/login")}>Get Started</button>
         </div>
       </section>
 

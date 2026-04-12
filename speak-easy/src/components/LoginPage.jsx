@@ -1,7 +1,9 @@
 import React from 'react'
 import "../styles/LoginPage.css";
+import {useNavigate} from "react-router-dom";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
   return (
     <div className="container">
 
@@ -29,12 +31,15 @@ const LoginPage = () => {
           <input type="email" placeholder="you@example.com" required/>
           <label>Password</label>
           <input type="password" placeholder="••••••••" required/>
+
           <div className="options">
-            <label>
-              <input type="checkbox"/>Remember me
+            <label className='remember'>
+              <input type="checkbox"/>
+                <span>Remember me</span>
             </label>
-            <span>Forgot Password?</span>
+            <span className='forgot'>Forgot Password?</span>
           </div>
+
           <button type="submit">Sign in</button>
 
           <div className="divider">or</div>
@@ -42,7 +47,7 @@ const LoginPage = () => {
             Continue with Google
           </button>
 
-          <p className="signup-text">
+          <p className="signup-text" onClick={()=>navigate("/signup")}>
             Don't have an account? <span>Sign up</span>
           </p>
         </form>
