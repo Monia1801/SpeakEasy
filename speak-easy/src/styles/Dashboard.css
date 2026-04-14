@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  min-height: 100vh;
+}
+
+.left-menu {
+  background-color: #f8f8f8;
+  border-right: 1px solid #d9d9d9;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: 10% 10% auto 10%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 30px 28px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.logo h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.logo-icon {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #20c997, #1abc9c);
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 18px rgba(32, 201, 151, 0.25);
+  flex-shrink: 0;
+}
+
+.dashboard-audio-logo {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 26px 28px;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.profile-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #20c997, #1abc9c);
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile p {
+  font-size: 18px;
+  font-weight: 500;
+  color: #111827;
+}
+
+.menu {
+  padding: 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* reduced space */
+}
+
+.menu > p:first-child {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #667085;
+  margin: 0 0 8px 16px;
+}
+
+.menu > p:not(:first-child) {
+  height: 48px; /* reduced height */
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #667085;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.menu > p:not(:first-child):hover {
+  background-color: #edf7f3;
+}
+
+.menu > p:nth-child(4) {
+  background: linear-gradient(135deg, #20c997, #1abc9c);
+  color: white;
+  box-shadow: 0 6px 14px rgba(32, 201, 151, 0.25);
+}
+
+.Logout {
+  border-top: 1px solid #d9d9d9;
+  padding: 22px 32px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #667085;
+  cursor: pointer;
+}
+
+.page-dashboard {
+  background-color: white;
+}

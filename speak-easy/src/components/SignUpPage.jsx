@@ -21,7 +21,7 @@ const SignUpPage = () => {
           <input type="password" placeholder="Password" required/>
           <label>Confirm Password</label>
           <input type="password" placeholder="Confirm Password" required/>
-          <button type="submit" onClick={()=>{navigate("/login")}}>Create Account</button>
+          <button type="submit" onClick={()=>{navigate("/login")}}  >Create Account</button>
 
           <div className="divider">or</div>
           <button type="button" className="google-btn">

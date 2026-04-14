@@ -40,7 +40,7 @@ const LoginPage = () => {
             <span className='forgot'>Forgot Password?</span>
           </div>
 
-          <button type="submit">Sign in</button>
+          <button type="submit" onClick={()=>{navigate("/dashboard")}}>Sign in</button>
 
           <div className="divider">or</div>
           <button type="button" className="google-btn">
