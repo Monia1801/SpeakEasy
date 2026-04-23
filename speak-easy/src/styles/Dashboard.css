@@ -5,10 +5,18 @@
   font-family: sans-serif;
 }
 
+html,
+body,
+#root {
+  min-width: 1200px;
+  overflow-x: auto;
+}
+
 .dashboard {
   display: grid;
   grid-template-columns: 290px 1fr;
   min-height: 100vh;
+  min-width: 1200px;
 }
 
 .left-menu {
@@ -16,14 +24,14 @@
   border-right: 1px solid #d9d9d9;
   min-height: 100vh;
   display: grid;
-  grid-template-rows: 10% 10% 1fr auto;
+  grid-template-rows: auto auto 1fr auto;
 }
 
 .logo {
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 30px 28px;
+  padding: 18px 28px;
   border-bottom: 1px solid #d9d9d9;
 }
 
@@ -31,6 +39,7 @@
   font-size: 18px;
   font-weight: 600;
   color: #0f172a;
+  white-space: nowrap;
 }
 
 .logo-icon {
@@ -42,6 +51,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 18px rgba(32, 201, 151, 0.25);
+  flex-shrink: 0;
 }
 
 .dashboard-audio-logo {
@@ -54,7 +64,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  padding: 26px 28px;
+  padding: 18px 28px;
   border-bottom: 1px solid #d9d9d9;
 }
 
@@ -69,12 +79,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .profile p {
   font-size: 18px;
   font-weight: 500;
   color: #111827;
+  white-space: nowrap;
 }
 
 .menu {
@@ -96,15 +108,15 @@
   height: 48px;
   display: flex;
   align-items: center;
-  padding: 0 16px;
+  padding: 0 30px 0 16px;
   border-radius: 14px;
   font-size: 16px;
   font-weight: 600;
   color: #667085;
   text-decoration: none;
   transition: 0.2s ease;
-  position:relative;
-  padding-right: 30px;  
+  position: relative;
+  white-space: nowrap;
 }
 
 .menu-link:hover {
@@ -118,7 +130,7 @@
   box-shadow: 0 6px 14px rgba(32, 201, 151, 0.25);
 }
 
-.menu-link.active::after{
+.menu-link.active::after {
   content: ">";
   position: absolute;
   right: 16px;
@@ -139,11 +151,13 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
 }
 
 .logout-icon {
   height: 22px;
   width: 22px;
+  flex-shrink: 0;
 }
 
 .Logout span {
@@ -158,4 +172,5 @@
   background-color: #f8f8f8;
   background-image: radial-gradient(#d1d5db 1px, transparent 1px);
   background-size: 20px 20px;
+  min-width: 910px;
 }
