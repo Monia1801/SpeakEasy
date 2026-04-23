@@ -10,12 +10,7 @@
   justify-content: center;
   padding: 42px 20px 56px;
   font-family: sans-serif;
-  background: linear-gradient(
-  to top left,
-  #e4d8f8 0%,
-  #f0ebf7 40%,
-  #ffffff 100%
-);
+  background: linear-gradient(315deg, #d8c3f6 0%, #e9ddfb 40%, #ffffff 100%);
 }
 
 .word-content {
