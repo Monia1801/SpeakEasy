@@ -7,17 +7,16 @@
 
 .dashboard {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: 290px 1fr;
   min-height: 100vh;
 }
 
 .left-menu {
-  background-color: #f8f8f8;
+  background-color: white;
   border-right: 1px solid #d9d9d9;
   min-height: 100vh;
-  width:78%;
   display: grid;
-  grid-template-rows: 10% 10% auto 10%;
+  grid-template-rows: 10% 10% 1fr auto;
 }
 
 .logo {
@@ -29,8 +28,8 @@
 }
 
 .logo h2 {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: #0f172a;
 }
 
@@ -43,7 +42,6 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 8px 18px rgba(32, 201, 151, 0.25);
-  flex-shrink: 0;
 }
 
 .dashboard-audio-logo {
@@ -71,7 +69,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 }
 
 .profile p {
@@ -81,13 +78,13 @@
 }
 
 .menu {
-  padding: 16px 16px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 6px; /* reduced space */
+  gap: 6px;
 }
 
-.menu > p:first-child {
+.menu > p {
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -95,8 +92,8 @@
   margin: 0 0 8px 16px;
 }
 
-.menu > p:not(:first-child) {
-  height: 48px; 
+.menu-link {
+  height: 48px;
   display: flex;
   align-items: center;
   padding: 0 16px;
@@ -104,18 +101,32 @@
   font-size: 16px;
   font-weight: 600;
   color: #667085;
-  cursor: pointer;
+  text-decoration: none;
   transition: 0.2s ease;
+  position:relative;
+  padding-right: 30px;  
 }
 
-.menu > p:not(:first-child):hover {
+.menu-link:hover {
   background-color: #edf7f3;
+  color: #0f172a;
 }
 
-.menu > p:nth-child(4) {
+.menu-link.active {
   background: linear-gradient(135deg, #20c997, #1abc9c);
   color: white;
   box-shadow: 0 6px 14px rgba(32, 201, 151, 0.25);
+}
+
+.menu-link.active::after{
+  content: ">";
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  font-weight: 500;
+  color: white;
 }
 
 .Logout {
@@ -125,25 +136,24 @@
   font-weight: 600;
   color: #667085;
   cursor: pointer;
-
-  display: flex;          
-  align-items: center;    
-  gap: 10px;             
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .logout-icon {
-  height: 30px;           
-  width: 25px;
+  height: 22px;
+  width: 22px;
 }
 
 .Logout span {
-  display: inline;     
-}   
+  display: inline;
+}
 
-.Logout:hover{
-  color:red;
+.Logout:hover {
+  color: red;
 }
 
 .page-dashboard {
-  background-color: white;
+  background-color: #f8f8f8;
 }
