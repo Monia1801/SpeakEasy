@@ -156,4 +156,6 @@
 
 .page-dashboard {
   background-color: #f8f8f8;
+  background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+  background-size: 20px 20px;
 }
