@@ -1,0 +1,323 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tongue-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 42px 20px 56px;
+  font-family: sans-serif;
+  background: linear-gradient(225deg, #f1d7a9 0%, #f0f0f0 50%);
+}
+
+.tongue-content {
+  width: 100%;
+  max-width: 840px;
+}
+
+.tongue-intro {
+  text-align: left;
+  margin-bottom: 34px;
+}
+
+.tongue-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: #fde7cf;
+  color: #f59e0b;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  margin-bottom: 18px;
+}
+
+.tongue-intro h1 {
+  font-size: 46px;
+  line-height: 1.15;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.tongue-intro p {
+  font-size: 17px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.difficulty-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.difficulty-btn {
+  min-width: 74px;
+  height: 44px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.difficulty-btn:hover {
+  background: #5f65ae ;
+  color:white;
+}
+
+.difficulty-btn.active {
+  background: #dcfce7;
+  border-color: #99f6e4;
+  color: #10b981;
+  font-weight: 600;
+}
+
+.twister-card {
+  width: 100%;
+  min-height: 350px;
+  padding: 42px 40px 34px;
+  text-align: center;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 30px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.04);
+}
+
+.twister-label {
+  font-size: 16px;
+  color: #64748b;
+  margin-bottom: 18px;
+}
+
+.twister-card h2 {
+  max-width: 760px;
+  margin: 0 auto 44px;
+  font-size: 25px;
+  line-height: 1.35;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.mic-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.mic-circle:hover {
+  transform: scale(1.04);
+  background:#d4f9ec;
+}
+
+.mic-circle svg {
+  width: 34px;
+  height: 34px;
+  color: #6b7280;
+}
+
+.record-text {
+  font-size: 17px;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.tongue-actions {
+  margin-top: 30px;
+}
+
+.next-twister-btn {
+  min-width: 172px;
+  height: 50px;
+  padding: 0 22px;
+  border-radius: 16px;
+  border: 1px solid #dbe2ea;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.next-twister-btn:hover {
+  background: #5f65ae ;
+  color:white;
+}
+
+.next-twister-btn svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .tongue-page {
+    padding: 36px 18px 48px;
+  }
+
+  .tongue-intro h1 {
+    font-size: 38px;
+  }
+
+  .tongue-intro p {
+    font-size: 16px;
+  }
+
+  .twister-card {
+    min-height: auto;
+    padding: 36px 28px 30px;
+    border-radius: 26px;
+  }
+
+  .twister-card h2 {
+    font-size: 22px;
+    margin-bottom: 34px;
+  }
+
+  .record-text,
+  .twister-label {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .tongue-page {
+    padding: 28px 14px 38px;
+  }
+
+  .tongue-badge {
+    font-size: 11px;
+    padding: 7px 14px;
+  }
+
+  .tongue-intro {
+    margin-bottom: 26px;
+  }
+
+  .tongue-intro h1 {
+    font-size: 31px;
+  }
+
+  .tongue-intro p {
+    font-size: 14px;
+  }
+
+  .difficulty-tabs {
+    gap: 8px;
+    margin-bottom: 22px;
+  }
+
+  .difficulty-btn {
+    min-width: 68px;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 14px;
+    border-radius: 12px;
+  }
+
+  .twister-card {
+    padding: 28px 18px 24px;
+    border-radius: 22px;
+  }
+
+  .twister-label {
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+
+  .twister-card h2 {
+    font-size: 19px;
+    margin-bottom: 28px;
+  }
+
+  .mic-circle {
+    width: 82px;
+    height: 82px;
+    margin-bottom: 18px;
+  }
+
+  .mic-circle svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .record-text {
+    font-size: 14px;
+  }
+
+  .tongue-actions {
+    margin-top: 20px;
+  }
+
+  .next-twister-btn {
+    width: 100%;
+    min-width: unset;
+    height: 48px;
+    font-size: 15px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tongue-intro h1 {
+    font-size: 26px;
+  }
+
+  .tongue-intro p {
+    font-size: 13px;
+  }
+
+  .twister-card {
+    padding: 24px 14px 20px;
+  }
+
+  .twister-card h2 {
+    font-size: 17px;
+  }
+
+  .mic-circle {
+    width: 74px;
+    height: 74px;
+  }
+
+  .mic-circle svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .record-text {
+    font-size: 13px;
+  }
+
+  .difficulty-btn {
+    height: 38px;
+    font-size: 13px;
+  }
+
+  .next-twister-btn {
+    font-size: 14px;
+    height: 46px;
+  }
+}
