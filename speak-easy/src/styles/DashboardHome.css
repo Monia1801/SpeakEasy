@@ -92,6 +92,12 @@
   margin-bottom: 2px;
 }
 
+.practice-card:hover{
+  cursor:pointer;
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
 .practice-card {
   position: relative;
   overflow: hidden;
@@ -132,15 +138,15 @@
 }
 
 .practice-card-one::after {
-  background: #d8efe9;
+  background: #31b894;
 }
 
 .practice-card-two::after {
-  background: #f3e8d6;
+  background: #e6b870;
 }
 
 .practice-card-three::after {
-  background: #eadff9;
+  background: #be92fc;
 }
 
 .activity {
@@ -265,7 +271,7 @@
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  background: #e9f6f2;
+  background: #9ef1d9;
 }
 
 .tip-card::before {
@@ -276,7 +282,7 @@
   width: 175px;
   height: 175px;
   border-radius: 50%;
-  background: #f3e8d6;
+  background: #e0b97c;
 }
 
 @media (max-width: 1200px) {

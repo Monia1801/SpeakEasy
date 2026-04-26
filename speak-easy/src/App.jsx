@@ -10,6 +10,7 @@ import TongueTwisters from './components/TongueTwisters';
 import Pronunciation from './components/Pronunciation';
 import Progress from './components/Progress';
 import Upcoming from './components/Upcoming';
+import "./index.css";
 
 const App = () => {
   return (

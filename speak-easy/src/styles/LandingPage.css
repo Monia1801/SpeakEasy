@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 
-header {
+.landing-page-header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -14,7 +14,7 @@ header {
   z-index: 1000;
 }
 
-nav {
+.landing-page-nav {
   height: 10vh;
   display: flex;
   align-items: center;
