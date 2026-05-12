@@ -14,7 +14,7 @@ body,
 
 .dashboard {
   display: grid;
-  grid-template-columns: 290px 1fr;
+  grid-template-columns: 270px 1fr;
   min-height: 100vh;
   min-width: 1200px;
 }
@@ -172,5 +172,5 @@ body,
   background-color: #f8f8f8;
   /* background-image: radial-gradient(#d1d5db 1px, transparent 1px); */
   background-size: 20px 20px;
-  min-width: 910px;
+  min-width:910px;
 }

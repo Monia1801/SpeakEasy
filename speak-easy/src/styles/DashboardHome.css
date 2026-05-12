@@ -137,7 +137,7 @@
   opacity: 0.5;
 }
 
-.practice-card-one::after {
+/* .practice-card-one::after {
   background: #31b894;
 }
 
@@ -147,7 +147,7 @@
 
 .practice-card-three::after {
   background: #be92fc;
-}
+} */
 
 .activity {
   margin-top: 6px;
@@ -271,7 +271,7 @@
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  background: #9ef1d9;
+  /* background: #9ef1d9; */
 }
 
 .tip-card::before {
@@ -282,7 +282,7 @@
   width: 175px;
   height: 175px;
   border-radius: 50%;
-  background: #e0b97c;
+  /* background: #e0b97c; */
 }
 
 @media (max-width: 1200px) {
