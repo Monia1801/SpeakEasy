@@ -17,7 +17,7 @@ const SignUpPage = () => {
     };
 
     try{
-      const response=await fetch("http://localhost:3000/signup",{
+      const response=await fetch("https://speakeasy-backend-3hry.onrender.com/signup",{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(newUser)
