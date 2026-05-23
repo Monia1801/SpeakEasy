@@ -24,7 +24,12 @@ const LoginPage = () => {
         body:JSON.stringify(userDetails)
       });
 
-      const data=await response.json();
+      let data = {};
+      try {
+        data = await response.json();
+      } catch (err) {
+        console.log("Empty or invalid JSON response");
+      }
 
       if(response.ok){
         alert("Login successful");
