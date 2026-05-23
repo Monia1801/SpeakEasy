@@ -5,7 +5,10 @@ const mongoose=require("mongoose");
 require("dotenv").config();
 
 
-app.use(cors());
+app.use(cors({
+  origin:["http://localhost:5173","https://speak-easy-097h.onrender.com/"],
+  Credentials:true
+}));
 app.use(express.json());
 
 
@@ -68,7 +71,39 @@ app.post("/login",async (req,res)=>{
 
 
 app.post("/signup",async (req,res)=>{
-
+  try{
+    const {userName,email,password}=req.body;
+    const alreadyExist=await User.findOne({email});
+    if(alreadyExist){
+      return res.status(409).json({
+        message:"Email id already exists"
+      });
+    }
+    else{
+      const findUserName=await User.findOne({userName});
+      if(findUserName){
+        return res.status(409).json({
+          message:"Change username"
+        });
+      }
+      else{
+        const newUser=new User({
+          userName,email,password
+        });
+        await newUser.save();
+        return res.status(201).json({
+          message:"User registered successfully"
+        });
+      }
+    }
+  }
+  catch(error){
+    console.log(error);
+    return res.status(500).json({
+      message:"Server Error"
+    });
+  }
+  
 });
 
 app.listen(3000,()=>{

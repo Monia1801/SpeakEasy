@@ -24,15 +24,15 @@ const LoginPage = () => {
 
       if(response.ok){
         alert("Login successful");
-        window.location.href="/dashboard";
+        navigate("/dashboard");
       }
       else{
-        alert("Login failed");
+        alert("Invalid credentials");
       }
     }
     catch(error){
       console.error("Login fetch error:", error);
-      alert("Something went wrong. Check console and ensure the backend is running.");
+      alert("Something went wrong");
     }
   }
 
