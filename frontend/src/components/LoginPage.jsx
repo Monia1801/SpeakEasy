@@ -18,7 +18,8 @@ const LoginPage = () => {
     try{
       const response=await fetch("https://speakeasy-backend-3hry.onrender.com/login",{
         method:"POST",
-        headers:{"Content-type":"application/json"},
+        headers:{"Content-Type":"application/json"},
+        credentials:"include",
         body:JSON.stringify(userDetails)
       });
 
