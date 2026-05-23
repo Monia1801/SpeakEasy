@@ -6,10 +6,9 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin:"https://speak-easy-097h.onrender.com",
+  origin:process.env.CLIENT_URL,
   credentials:true
 }));
-// 
 app.use(express.json());
 
 

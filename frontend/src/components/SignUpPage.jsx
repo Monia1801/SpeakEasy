@@ -17,7 +17,7 @@ const SignUpPage = () => {
     };
 
     try{
-      const response=await fetch("https://speakeasy-backend-3hry.onrender.com/signup",{
+      const response=await fetch(`${import.meta.env.VITE_API_URL}/signup`,{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(newUser)
