@@ -7,6 +7,7 @@ const SignUpPage = () => {
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
   const[userName,setUserName] =useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
@@ -17,7 +18,7 @@ const SignUpPage = () => {
     };
 
     try{
-      const response=await fetch(`${import.meta.env.VITE_API_URL}/signup`,{
+      const response=await fetch(`${API_URL}/signup`,{
         method:"POST",
         headers:{"content-type":"application/json"},
         body:JSON.stringify(newUser)

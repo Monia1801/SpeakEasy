@@ -7,6 +7,7 @@ const LoginPage = () => {
 
   const[email,setEmail]=useState("");
   const[password,setPassword]=useState("");
+  const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit=async(e)=>{
     e.preventDefault();
@@ -16,7 +17,7 @@ const LoginPage = () => {
     };
 
     try{
-      const response=await fetch(`${import.meta.env.VITE_API_URL}/login`,{
+      const response=await fetch(`${API_URL}/login`,{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         credentials:"include",
