@@ -23,12 +23,15 @@ const LoginPage = () => {
         body:JSON.stringify(userDetails)
       });
 
+      const data=await response.json();
+
       if(response.ok){
         alert("Login successful");
         navigate("/dashboard");
       }
       else{
-        alert("Invalid credentials");
+        alert(data.message || "Invalid credentials");
+        console.log("Login failed:", response.status, data.message);
       }
     }
     catch(error){

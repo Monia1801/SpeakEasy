@@ -19,11 +19,11 @@ if(MONGO_URI){
     console.log("MongoDB connected successfully");
   })
   .catch((error)=>{
-    console.log(error);
+    console.error("MongoDB connection error:", error);
   });
 }
 else{
-  console.log("MongoDB not connected");
+  console.error("MongoDB not connected: MONGO_URI is missing");
 }
 
 const userSchema=new mongoose.Schema({
@@ -35,12 +35,25 @@ const userSchema=new mongoose.Schema({
 const User= mongoose.model("User",userSchema);
 
 app.post("/login",async (req,res)=>{
-  console.log(req.body);
+  console.log("Login request body:", req.body);
+  // if (mongoose.connection.readyState !== 1) {
+  //   console.error("Login failed: database not connected. readyState=", mongoose.connection.readyState);
+    return res.status(503).json({
+      message:"Database not connected"
+    });
+  // }
+
   try{
     const {email,password}=req.body;
-     const found=await User.findOne({email});
+    if (!email || !password) {
+      return res.status(400).json({
+        message:"Email and password are required"
+      });
+    }
 
-     if(found){
+    const found=await User.findOne({email});
+
+    if(found){
       console.log("Inside found");
       if(password===found.password){
         return res.status(200).json({
@@ -53,16 +66,16 @@ app.post("/login",async (req,res)=>{
           message:"Invalid credentials"
         });
       }
-     }
-     else{
+    }
+    else{
       console.log("User not found")
       return res.status(404).json({
         message:"User not found"
       });
-     }
+    }
   }
   catch(error){
-    console.log(error);
+    console.error("Login route error:", error);
     return res.status(500).json({
       message:"Server Error"
     });
