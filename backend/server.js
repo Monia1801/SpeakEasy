@@ -6,9 +6,10 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin:["http://localhost:5173","https://speak-easy-097h.onrender.com"],
+  origin:true,
   credentials:true
 }));
+// ["http://localhost:5173","https://speak-easy-097h.onrender.com"]
 app.use(express.json());
 
 
@@ -35,13 +36,6 @@ const userSchema=new mongoose.Schema({
 const User= mongoose.model("User",userSchema);
 
 app.post("/login",async (req,res)=>{
-  console.log("Login request body:", req.body);
-  // if (mongoose.connection.readyState !== 1) {
-  //   console.error("Login failed: database not connected. readyState=", mongoose.connection.readyState);
-    return res.status(503).json({
-      message:"Database not connected"
-    });
-  // }
 
   try{
     const {email,password}=req.body;
