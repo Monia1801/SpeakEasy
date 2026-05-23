@@ -6,8 +6,8 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin:["http://localhost:5173","https://speak-easy-097h.onrender.com/"],
-  Credentials:true
+  origin:["http://localhost:5173","https://speak-easy-097h.onrender.com"],
+  credentials:true
 }));
 app.use(express.json());
 
@@ -109,5 +109,5 @@ app.post("/signup",async (req,res)=>{
 const PORT=process.env.PORT || 3000;
 
 app.listen(PORT,()=>{
-  console.log("Server running on http://localhost:3000");
+  console.log(`Server running on http://localhost:${PORT}`);
 });
