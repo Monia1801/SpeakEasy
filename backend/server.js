@@ -6,10 +6,10 @@ require("dotenv").config();
 
 
 app.use(cors({
-  origin:true,
+  origin:"https://speak-easy-097h.onrender.com",
   credentials:true
 }));
-// ["http://localhost:5173","https://speak-easy-097h.onrender.com"]
+// 
 app.use(express.json());
 
 
