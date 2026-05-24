@@ -95,15 +95,14 @@ app.post("/login",async (req,res)=>{
         expiresIn:"1d"
       });
       
+      // secure:false, 
+      // sameSite:"lax",
+      //to test in the localhost
       res.cookie("token",token,{
         httpOnly:true,
         secure:true,
-        // secure:false, 
-        // sameSite:"lax",
-        //to test in the localhost
         sameSite:"none",
-        maxAge: 24 * 60 * 60 * 1000,
-        path="/"
+        maxAge: 24 * 60 * 60 * 1000
       });
 
         return res.status(200).json({
@@ -212,8 +211,7 @@ app.post("/logout",(req,res)=>{
   res.clearCookie("token",{
     httpOnly:true,
     secure:true,
-    sameSite:"none",
-    path:"/"
+    sameSite:"none"
   });
   return res.status(200).json({
     message:"Logged out successfully"
