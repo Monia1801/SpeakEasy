@@ -11,6 +11,7 @@ import Pronunciation from './components/Pronunciation';
 import Progress from './components/Progress';
 import Upcoming from './components/Upcoming';
 import "./index.css";
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 const App = () => {
   return (
@@ -19,7 +20,11 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage/>}/>
-        <Route path="/dashboard" element={<Dashboard/>}>
+        {/* <Route path="/dashboard" element={<Dashboard/>}> */}
+        <Route path="/dashboard" element={
+          <ProtectedRoutes>
+          <Dashboard/>
+          </ProtectedRoutes>}>
           <Route index element={<DashboardHome/>}/>
           <Route path="mock-interview" element={<MockInterview />} />
           <Route path="tongue-twisters" element={<TongueTwisters />} />

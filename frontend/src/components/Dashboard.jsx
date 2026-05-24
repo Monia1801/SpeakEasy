@@ -1,8 +1,24 @@
 import React from 'react';
-import {NavLink, Outlet} from "react-router-dom";
+import {NavLink, Outlet, useNavigate} from "react-router-dom";
 import "../styles/Dashboard.css";
 
 const Dashboard = () => {
+  const navigate=useNavigate();
+
+  const handleLogout = async () => {
+  try{
+    await fetch(`${import.meta.env.VITE_API_URL}/logout`,{
+        method:"POST",
+        credentials:"include"
+      }
+    );
+    navigate("/login");
+  }
+  catch(error){
+    console.log(error);
+  }
+};
+
   return (
     <div className="dashboard">
       <div className="left-menu">
@@ -30,7 +46,7 @@ const Dashboard = () => {
           <NavLink to="/dashboard/upcoming" className="menu-link">Upcoming</NavLink>
         </section>
 
-        <section className='Logout'>
+        <section className='Logout' onClick={handleLogout}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="logout-icon">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"/></svg>
           <span>Logout</span>

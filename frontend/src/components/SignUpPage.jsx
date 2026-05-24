@@ -4,9 +4,10 @@ import {useNavigate} from "react-router-dom";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
+  const [userName,setUserName]=useState("");
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
-  const[userName,setUserName] =useState("");
+  const[confirmPassword,setConfirmPassword]=useState("");
   const API_URL = import.meta.env.VITE_API_URL;
 
   const handleSubmit=async(e)=>{
@@ -17,10 +18,16 @@ const SignUpPage = () => {
       password:password
     };
 
+    if(password!==confirmPassword){
+      alert("Passwords do not match");
+      return;
+    }
+
     try{
-      const response=await fetch(`${API_URL}/signup`,{
+      // const response=await fetch(`${API_URL}/signup`,{
+       const response=await fetch(`http://localhost:3000/signup`,{
         method:"POST",
-        headers:{"content-type":"application/json"},
+        headers:{"Content-Type":"application/json"},
         body:JSON.stringify(newUser)
       });
 
@@ -62,7 +69,7 @@ const SignUpPage = () => {
           <label>Password</label>
           <input type="password" placeholder="Password" required value={password} onChange={(e)=>setPassword(e.target.value)}/>
           <label>Confirm Password</label>
-          <input type="password" placeholder="Confirm Password" required/>
+          <input type="password" placeholder="Confirm Password" required value={confirmPassword} onChange={(e)=>setConfirmPassword(e.target.value)}/>
           <button type="submit">Create Account</button>
           {/* onClick={()=>{navigate("/login")}} */}
           <div className="divider">or</div>

@@ -24,7 +24,7 @@ const features = [
   },
 ];
 
-const UpcomingFeatures = () => {
+const Upcoming = () => {
   return (
     <div className="upcoming-page">
       <div className="upcoming-content">
@@ -50,4 +50,4 @@ const UpcomingFeatures = () => {
   );
 };
 
-export default UpcomingFeatures;
+export default Upcoming;
