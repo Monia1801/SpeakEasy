@@ -28,6 +28,8 @@ const LoginPage = () => {
       let data = {};
       try {
         data = await response.json();
+        const userName=data.user.username;
+        localStorage.setItem("userName",userName);
       } catch (err) {
         console.log("Empty or invalid JSON response");
       }

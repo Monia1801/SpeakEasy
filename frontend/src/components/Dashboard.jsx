@@ -12,12 +12,15 @@ const Dashboard = () => {
         credentials:"include"
       }
     );
+    localStorage.removeItem("userName");
     navigate("/login");
   }
   catch(error){
     console.log(error);
   }
 };
+ const userName = localStorage.getItem("username");
+ const avatarLetter=userName ? userName[0].toUpperCase() : "G";
 
   return (
     <div className="dashboard">
@@ -32,8 +35,8 @@ const Dashboard = () => {
         </section>
 
         <section className="profile">
-          <section className='profile-avatar'>M</section>
-          <p>Monia</p>
+          <section className='profile-avatar'>{avatarLetter}</section>
+          <p>{userName ? `Welcome ${userName}` : "Welcome Guest"}</p>
         </section>
 
         <section className='menu'>
