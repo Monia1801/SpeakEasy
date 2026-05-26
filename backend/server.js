@@ -108,8 +108,8 @@ app.post("/login",async (req,res)=>{
         return res.status(200).json({
           message:"Login successful",
           user:{
-            username:user.userName,
-            email:user.email
+            username:found.userName,
+            email:found.email
           }
         });
       }
