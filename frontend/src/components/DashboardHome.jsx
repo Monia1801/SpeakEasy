@@ -4,11 +4,13 @@ import {useNavigate} from "react-router-dom";
 
 const DashboardHome = () => {
   const navigate = useNavigate();
+  const userName = localStorage.getItem("userName");
+
   return (
     <div className="dashboard-home">
       <div className="dashboard-home-top">
         <section className="intro">
-          <h1>Welcome back, Monia</h1>
+          <h1>Welcome back, {userName ? userName.trim() : "Guest"}</h1>
           <p>Ready to level up your speaking skills today?</p>
         </section>
       </div>

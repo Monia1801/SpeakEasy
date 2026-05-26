@@ -19,7 +19,7 @@ const Dashboard = () => {
     console.log(error);
   }
 };
- const userName = localStorage.getItem("username");
+ const userName = localStorage.getItem("userName");
  const avatarLetter=userName ? userName[0].toUpperCase() : "G";
 
   return (
