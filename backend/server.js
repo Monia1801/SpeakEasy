@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const bcrypt=require("bcryptjs");
 
 // origin:true,
-  // origin:"http://localhost:5173",
+//origin:"http://localhost:5173",
 app.use(cors({
   origin: process.env.CLIENT_URL,
   credentials:true
@@ -71,6 +71,7 @@ const verifyToken=(req,res,next)=>{
     });
   }
 };
+
 app.post("/login",async (req,res)=>{
 
   try{
@@ -95,9 +96,10 @@ app.post("/login",async (req,res)=>{
         expiresIn:"1d"
       });
       
+      
+      //to test in the localhost
       // secure:false, 
       // sameSite:"lax",
-      //to test in the localhost
       res.cookie("token",token,{
         httpOnly:true,
         secure:true,
@@ -173,16 +175,66 @@ app.post("/signup",async (req,res)=>{
   
 });
 
+const questions = [
+  "Tell me about yourself",
+  "What are your strengths?",
+  "Why should we hire you?",
+  "Describe a challenge you faced",
+  "Where do you see yourself in 5 years?",
+];
+
+app.get("/questions", verifyToken, (req, res) => {
+  res.json({ questions });
+});
+
+app.get("/mock-interview-data", verifyToken, (req,res)=>{
+  res.status(200).json({
+    message:"Mock interview protected data",
+    questions
+  });
+});
+
+app.post("/analyze-answer", verifyToken, (req, res) => {
+
+  const { answer, question } = req.body;
+
+  if (!answer) {
+    return res.status(400).json({ message: "Answer required" });
+  }
+
+  let score = 5;
+  let feedback = "Average answer. Try to be more structured.";
+
+  if (answer.length > 150) {
+    score += 2;
+    feedback = "Good detailed answer.";
+  }
+
+  if (
+    answer.toLowerCase().includes("team") ||
+    answer.toLowerCase().includes("confident")
+  ) {
+    score += 2;
+    feedback = "Strong keywords used. Good communication.";
+  }
+
+  if (answer.length < 50) {
+    score = 3;
+    feedback = "Answer too short. Please elaborate more.";
+  }
+
+  return res.json({
+    score: Math.min(score, 10),
+    feedback,
+  });
+});
+
+
+
 app.get("/dashboard-data",verifyToken,(req,res)=>{
   res.status(200).json({
     message:"Dashboard data",
     user:req.user
-  });
-});
-
-app.get("/mock-interview-data",verifyToken,(req,res)=>{
-  res.status(200).json({
-    message:"Mock interview protected data"
   });
 });
 
