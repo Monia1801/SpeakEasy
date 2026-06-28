@@ -98,12 +98,12 @@ app.post("/login",async (req,res)=>{
       
       
       //to test in the localhost
-      // secure:false, 
-      // sameSite:"lax",
+      // secure:true,
+      // sameSite:"none",
       res.cookie("token",token,{
+        secure:false, 
+        sameSite:"lax",
         httpOnly:true,
-        secure:true,
-        sameSite:"none",
         maxAge: 24 * 60 * 60 * 1000
       });
 
@@ -229,7 +229,71 @@ app.post("/analyze-answer", verifyToken, (req, res) => {
   });
 });
 
+app.get("/tongue-twisters", verifyToken, (req, res) => {
+  const difficulty = req.query.difficulty || "easy";
 
+  if (!twisters[difficulty]) {
+    return res.status(400).json({
+      message: "Invalid difficulty",
+    });
+  }
+
+  return res.json({
+    difficulty,
+    twisters: twisters[difficulty],
+  });
+});
+
+const twisters = {
+  easy: [
+    "she sells seashells by the seashore",
+    "red lorry yellow lorry",
+    "toy boat toy boat toy boat",
+  ],
+  medium: [
+    "how can a clam cram in a clean cream can",
+    "fuzzy wuzzy was a bear",
+    "unique new york unique new york",
+  ],
+  hard: [
+    "six sleek swans swam swiftly southwards",
+    "the sixth sick sheik's sixth sheep's sick",
+    "strict strong string strictly strung",
+  ],
+};
+
+
+app.get("/tongue-twisters", verifyToken, (req, res) => {
+  const difficulty = req.query.difficulty || "easy";
+
+  return res.json({
+    twisters: twisters[difficulty] || [],
+  });
+});
+
+
+app.post("/check-tongue-twister", verifyToken, (req, res) => {
+  const { expected, spoken } = req.body;
+
+  if (!expected || !spoken) {
+    return res.status(400).json({
+      correct: false,
+      feedback: "Missing expected or spoken text",
+    });
+  }
+
+  const normalize = (text) =>
+    text.toLowerCase().replace(/[^a-z ]/g, "").trim();
+
+  const isCorrect = normalize(expected) === normalize(spoken);
+
+  return res.json({
+    correct: isCorrect,
+    feedback: isCorrect
+      ? "🎉 Hooray! Perfect pronunciation!"
+      : ` Not correct.`,
+  });
+});
 
 app.get("/dashboard-data",verifyToken,(req,res)=>{
   res.status(200).json({
