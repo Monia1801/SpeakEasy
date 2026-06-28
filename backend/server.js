@@ -98,11 +98,11 @@ app.post("/login",async (req,res)=>{
       
       
       //to test in the localhost
-      // secure:true,
-      // sameSite:"none",
+      // secure:false, 
+      // sameSite:"lax",
       res.cookie("token",token,{
-        secure:false, 
-        sameSite:"lax",
+        secure:true,
+        sameSite:"none",
         httpOnly:true,
         maxAge: 24 * 60 * 60 * 1000
       });

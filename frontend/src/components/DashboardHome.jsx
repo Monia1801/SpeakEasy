@@ -18,24 +18,24 @@ const DashboardHome = () => {
       <div className="performance-cards">
         <section className="stat-card">
           <div className="stat-card-top">
-            <h2>78%</h2>
-            <span className="stat-change">+5%</span>
+            <h2>—</h2>
+            <span className="soon-badge">Soon</span>
           </div>
           <p>Accuracy</p>
         </section>
 
         <section className="stat-card">
           <div className="stat-card-top">
-            <h2>12</h2>
-            <span className="stat-change">+3</span>
+            <h2>—</h2>
+            <span className="soon-badge">Soon</span>
           </div>
           <p>Sessions</p>
         </section>
 
         <section className="stat-card">
           <div className="stat-card-top">
-            <h2>4.5h</h2>
-            <span className="stat-change">+1.2h</span>
+            <h2>—</h2>
+            <span className="soon-badge">Soon</span>
           </div>
           <p>Practice Time</p>
         </section>
