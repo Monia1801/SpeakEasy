@@ -58,7 +58,7 @@ const LoginPage = () => {
         </section>
         <section className='left-middle'>
           <h1>Speak with<br></br> confidence, ace every interview.</h1>
-          <p>AI-powered practice sessions that help you<br></br>
+          <p>Interactive practice sessions that help you<br></br>
              master pronunciation, fluency, and interview<br></br>
              skills.</p>
         </section>

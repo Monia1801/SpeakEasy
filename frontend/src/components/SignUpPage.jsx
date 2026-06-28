@@ -90,7 +90,7 @@ const SignUpPage = () => {
         <section className='green-middle'>
           <h1>Your path to fluent,<br></br> fearless speaking<br></br>starts here.</h1>
           <p>Practice mock interviews, tongue twisters, and<br></br>
-             pronunciation drills — all powered by AI<br></br>
+             pronunciation drills <br></br>
              feedback.</p>
         </section>
         <section className='green-end'>
